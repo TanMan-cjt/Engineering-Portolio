@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAV BAR (matches About Me page) -->
+<nav id="about-nav">
+    <div class="nav-inner">
+        <div class="nav-left">
+            <a href="/#projects" class="back-button">← Back</a>
+        </div>
+    </div>
+</nav>
+
+<section id="project-full">
+    <div class="project-article">
+
+        <h1>CakeBot: Maze Navigation and Block Handling</h1>
+
+        <p class="placeholder-msg">
+            Page to be updated shortly. Check back soon for details!
+        </p>
+
+    </div>
+</section>
+
+</body>
+</html>

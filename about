@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Engineering Portfolio</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/ccd30fe0f0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main>
+        
+
+<h2 class="section-title">About Me</h2>
+
+<section class="about-section">
+    <img src="/static/images/profile.jpg" class="profile-img">
+
+    <div class="about-text">
+        <h3>Hi, I'm Caleb.</h3>
+        <p>
+            I'm a mechanical engineering student passionate about innovation, design,
+            and solving real-world problems. I enjoy working on hands-on projects and
+            applying engineering principles to create meaningful solutions.
+        </p>
+        <p>
+            More details will go here once you specify what you want included.
+        </p>
+    </div>
+</section>
+
+
+    </main>
+
+</body>
+</html>

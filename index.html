@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Engineering Portfolio</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/ccd30fe0f0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main>
+        
+
+<!-- HERO SECTION WITH BACKGROUND VIDEO -->
+<section id="hero">
+    <video autoplay loop muted playsinline id="hero-video">
+        <source src="/static/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+        <h1>Caleb Tan</h1>
+        <h3><em>Engineering Portfolio</em></h3>
+    </div>
+</section>
+
+<!-- Anchor for About Me -->
+<div id="about-anchor"></div>
+
+<!-- NAVIGATION BAR -->
+<nav id="main-nav">
+    <div class="nav-inner">
+
+        <div class="nav-left">
+            <span class="home-tab" onclick="scrollToSection('hero')">Home</span>
+        </div>
+
+        <div class="nav-right">
+            <span onclick="scrollToSection('about-anchor')">About Me</span>
+            <span onclick="scrollToSection('projects')">Projects</span>
+            <span onclick="scrollToSection('experience')">Experience</span>
+            <span onclick="scrollToSection('skills')">Skills</span>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ABOUT ME PREVIEW SECTION -->
+<section class="content-section">
+    <div class="about-container" id="about">
+        <img src="/static/images/profile.jpg" 
+             alt="Profile Picture" class="about-photo">
+
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                Hello! My name is Caleb, and I am a mechanical engineer with an expansive technical foundation and global perspective shaped by my life and education abroad. 
+                As a University of Toronto Alumni, of the graduating class of 2026, my experience spans mechanical design, prototyping, and automation, 
+                complemented by programming skills in Python, C#, and PLC languages, and advanced knowledge and experience with SolidWorks, MATLAB, and custom PCB development. 
+                Having traveled to over 30 countries, I have developed adaptability, open-mindedness, and patience; qualities that guide my approach to engineering 
+                problems and collaborative design. I am driven by curiosity for how things work, a commitment to creating solutions with tangible results, and a 
+                genuine appreciation for teamwork and hands-on learning.
+            </p>
+
+            <a href="/about_full" class="more-button">
+                More <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="mosaic-grid">
+
+        <a href="/project1" class="project-card p1">
+            <div class="media-container">
+
+                <img src="/static/images/PneumaticPistonCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A pneumatic piston machined from raw stock using precision turning and milling processes
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="project-text">
+                <h3>Pneumatic Piston Build</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project2" class="project-card p2">
+            <div class="media-container">
+
+                <img src="/static/images/PCBCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A custom PCB designed and hand-soldered for an LED display system
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-text">
+                <h3>Custom PCB Design and Fabrication</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project3" class="project-card p3">
+            <div class="media-container">
+
+                <img src="/static/images/CakeBotCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A robot designed and programmed to navigate a maze using localization algorithms, onboard sensing, and coordinated manipulation for block retrieval
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>CakeBot: Maze Navigation and Block Handling</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project4" class="project-card p4">
+            <div class="media-container">
+
+                <img src="/static/images/BallLauncherCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A tennis ball launcher developed using a single motor, kinematic linkages, and spring-assisted energy storage
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Kinematic & Spring-Driven Ball Launcher</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project5" class="project-card p5">
+            <div class="media-container">
+
+                <img src="/static/images/GearboxCover.jpeg">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A compact 3D-printed planetary gearbox designed to achieve high torque output and low angular velocity
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Planetary Gearbox Design</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project6" class="project-card p6">
+            <div class="media-container">
+
+                <img src="/static/images/WebsiteCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A fully custom engineering portfolio website programmed from scratch
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Web Development: Engineering Portfolio</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project7" class="project-card p7">
+            <div class="media-container">
+
+                <img src="/static/images/ProposalCover.jpg">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A wood-and-acrylic puzzleboard designed to conceal an image revealed only through a polarized lens
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Personal PuzzleBoard Proposal</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project8" class="project-card p8">
+            <div class="media-container">
+
+                <img src="/static/images/MechReach5Cover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A 5-DOF robotic arm designed and built from scratch, including motion control programming for multi-axis manipulation
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>MechReach5: Custom 5DOF Robotic Manipulator</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project9" class="project-card p9">
+            <div class="media-container">
+
+                <img src="/static/images/BridgeCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A lightweight bridge engineered to support a 400 N load made strictly from foamboard and adhesive 
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Foamboard Bridge Design Challenge</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+        <a href="/project10" class="project-card p10">
+            <div class="media-container">
+
+                <img src="/static/images/CapstoneCover.png">
+
+                <!-- Hover Overlay -->
+                <div class="overlay">
+                    <p>
+                        A knee-walker redesign developed through concept generation, proof-of-concept testing, and detailed mechanical analysis
+                    </p>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Capstone: Reinventing The Knee Walker</h3>
+                <span class="more-link">More →</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+
+<section id="experience" class="experience-wrapper">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline-left">
+
+        <!-- Timeline Items -->
+        <div class="timeline-item" data-id="1">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">May 2024</p>
+                <p class="title">Training – ProAutomated</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="2">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Jun 2024</p>
+                <p class="title">Conveyance – Amazon (California)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="3">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Jul 2024</p>
+                <p class="title">Conveyance – Amazon (Maryland)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="4">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Aug 2024</p>
+                <p class="title">Conveyance – Amazon (Pennsylvania)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="5">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Sep 2024</p>
+                <p class="title">Conveyance – Amazon (British Columbia)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="6">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Oct 2024</p>
+                <p class="title">Conveyance – Amazon (Michigan)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="7">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Nov 2024</p>
+                <p class="title">Data Center – Google (Nebraska)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="8">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Dec 2024</p>
+                <p class="title">Data Center – QTS (Arizona)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item" data-id="9">
+            <div class="dot"></div>
+            <div class="text">
+                <p class="date">Jun–Aug 2025</p>
+                <p class="title">Data Center – QTS (Virginia)</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right-side popup container -->
+    <div id="experience-popup" class="popup visible">
+        <!-- JS will fill this -->
+    </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills-section">
+    <h2 class="section-title">Skills</h2>
+
+    <!-- Industrial Automation -->
+    <div class="skill-category">
+        <div class="skill-category-line">
+            <h3>Automation:</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-icon" data-tooltip="Studio5000 – PLC Programming">
+                <img src="/static/logos/studio5000logo.png" alt="Studio5000">
+            </div>
+            <div class="skill-icon" data-tooltip="Siemens TIA Portal – PLC & HMI">
+                <img src="/static/logos/siemenstialogo.png" alt="Siemens TIA">
+            </div>
+            <div class="skill-icon" data-tooltip="Aveva – SCADA Integration">
+                <img src="/static/logos/avevalogo.png" alt="Aveva">
+            </div>
+            <div class="skill-icon" data-tooltip="Codesys – Embedded Control">
+                <img src="/static/logos/codesyslogo.png" alt="Codesys">
+            </div>
+            <div class="skill-icon" data-tooltip="Connected Components Workbench – Automation Setup">
+                <img src="/static/logos/connectedcomponentslogo.png" alt="Connected Components">
+            </div>
+            <div class="skill-icon" data-tooltip="PuTTY – Remote Access">
+                <img src="/static/logos/puttylogo.png" alt="Putty">
+            </div>
+        </div>
+    </div>
+
+    <!-- Programming -->
+    <div class="skill-category">
+        <div class="skill-category-line">
+            <h3>Design:</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-icon" data-tooltip="SolidWorks – 3D Modeling">
+                <img src="/static/logos/solidworkslogo.png" alt="Solidworks">
+            </div>
+            <div class="skill-icon" data-tooltip="AutoCAD – 2D Drafting">
+                <img src="/static/logos/autocadlogo.png" alt="AutoCAD">
+            </div>
+            <div class="skill-icon" data-tooltip="Unity – Simulation/Visualization">
+                <img src="/static/logos/unitylogo.png" alt="Unity">
+            </div>
+            <div class="skill-icon" data-tooltip="SketchUp – Concept Modeling">
+                <img src="/static/logos/sketchuplogo.png" alt="SketchUp">
+            </div>
+            <div class="skill-icon" data-tooltip="Onshape – Cloud CAD">
+                <img src="/static/logos/onshapelogo.png" alt="Onshape">
+            </div>
+            <div class="skill-icon" data-tooltip="EAGLE – PCB Design">
+                <img src="/static/logos/eaglelogo.png" alt="EAGLE">
+            </div>
+        </div>
+    </div>
+
+    <!-- Software & Tools -->
+    <div class="skill-category">
+        <div class="skill-category-line">
+            <h3>Programming:</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-icon" data-tooltip="Python – Scripting/Automation">
+                <img src="/static/logos/pythonlogo.png" alt="Python">
+            </div>
+            <div class="skill-icon" data-tooltip="C# – Application Development">
+                <img src="/static/logos/csharplogo.png" alt="C#">
+            </div>
+            <div class="skill-icon" data-tooltip="C++ – Software Development">
+                <img src="/static/logos/cpluspluslogo.png" alt="C++">
+            </div>
+            <div class="skill-icon" data-tooltip="JavaScript – Web Programming">
+                <img src="/static/logos/javascriptlogo.png" alt="JavaScript">
+            </div>
+            <div class="skill-icon" data-tooltip="HTML – Web Markup">
+                <img src="/static/logos/htmllogo.png" alt="HTML">
+            </div>
+            <div class="skill-icon" data-tooltip="Arduino – Embedded Programming">
+                <img src="/static/logos/arduinologo.png" alt="Arduino">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hardware & Electronics -->
+    <div class="skill-category">
+        <div class="skill-category-line">
+            <h3>Analysis:</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-icon" data-tooltip="ANSYS – Structural Simulation">
+                <img src="/static/logos/ansyslogo.png" alt="ANSYS">
+            </div>
+            <div class="skill-icon" data-tooltip="FEA – Finite Element Analysis">
+                <img src="/static/logos/fealogo.png" alt="FEA">
+            </div>
+            <div class="skill-icon" data-tooltip="PSpice – Circuit Simulation">
+                <img src="/static/logos/pspicelogo.png" alt="PSpice">
+            </div>
+            <div class="skill-icon" data-tooltip="Minitab – Statistical Analysis">
+                <img src="/static/logos/minitablogo.png" alt="Minitab">
+            </div>
+            <div class="skill-icon" data-tooltip="MATLAB – Data Analysis">
+                <img src="/static/logos/matlablogo.png" alt="MATLAB">
+            </div>
+            <div class="skill-icon" data-tooltip="Microsoft Office – Documentation">
+                <img src="/static/logos/officelogo.png" alt="Office">
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & Analytics -->
+    <div class="skill-category">
+        <div class="skill-category-line">
+            <h3>Certifications:</h3>
+            <div class="line"></div>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-icon" data-tooltip="OSHA 30-Hour Workplace Safety Certification">
+                <img src="/static/logos/osha30logo.png" alt="SQL">
+            </div>
+            <div class="skill-icon" data-tooltip="NFPA 70E Electrical Safety Certification">
+                <img src="/static/logos/nfpa70elogo.png" alt="Tableau">
+            </div>
+            <div class="skill-icon" data-tooltip="OSHA Aerial & Scissor Lift Certification">
+                <img src="/static/logos/aerialliftlogo.png" alt="Pandas">
+            </div>
+            <div class="skill-icon" data-tooltip="OSHA Arc Flash & LOTO Certification">
+                <img src="/static/logos/arcflashlogo.png" alt="PowerShell">
+            </div>
+            <div class="skill-icon" data-tooltip="DELF B1 French Proficiency Diploma">
+                <img src="/static/logos/delflogo.png" alt="Linux">
+            </div>
+            <div class="skill-icon" data-tooltip="Standard First Aid & CPR/AED Level C Certification">
+                <img src="/static/logos/redcrosslogo.png" alt="Linux">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER / CONTACT BAR -->
+<footer id="footer">
+    <div class="footer-container">
+        <span><i class="fa-regular fa-envelope"></i>: <a href="mailto:ctanengineering@gmail.com">ctanengineering@gmail.com</a></span>
+        <span><i class="fa-classic fa-phone"></i>: <a href="tel:+16472089091">+1 (647) 208-9091</a></span>
+        <span><i class="fa-brands fa-linkedin"></i>: <a href="https://www.linkedin.com/in/calebtan150727" target="_blank">calebtan150727</a></span>
+    </div>
+</footer>
+
+
+    </main>
+
+</body>
+</html>

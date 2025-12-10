@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Engineering Portfolio</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/ccd30fe0f0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main>
+        
+<nav id="about-nav">
+    <div class="nav-inner">
+        <div class="nav-left">
+            <a href="/#about" class="back-button">← Back</a>
+        </div>
+    </div>
+</nav>
+
+<section id="about-full">
+    <div class="about-article">
+
+        <h1>About Me</h1>
+
+        <p class="float-img right">
+            <img src="/static/images/about1.jpg">
+        </p>
+
+        <p>
+            Hello! My name is Caleb and I am a mechanical engineer driven by logic, curiosity, and a passion for understanding how things work.
+            My strengths lie in mathematics, critical thinking, and hands-on problem solving, and I’ve always been
+            motivated by the challenge of building systems that are both functional and elegant. What sets me apart is
+            my ability to think creatively under pressure, adapt quickly to unfamiliar circumstances, and draw on
+            years of international experience to work in any environment.
+        </p>
+
+        <p>
+            I chose a career in engineering because it combines everything I enjoy: designing, analyzing, calculating,
+            experimenting, and transforming an idea into a working solution. When approaching a problem,
+            I break it down into manageable parts, explore it from multiple angles, and use a mix of hands-on testing
+            and theoretical reasoning to build a complete understanding. I value hard work, intellectual honesty,
+            and seeing projects through from concept to completion. Collaboration is also important to me; I enjoy
+            working with diverse teams and explaining technical ideas in clear, structured ways that make sense to
+            everyone.
+        </p>
+
+        <p class="pfloat-img left">
+            <img src="/static/images/about2.jpg">
+        </p>
+
+        <p>
+            My personal journey has shaped both my resilience and the way I approach engineering. I left Canada when
+            I was eleven and spent some time traveling across several countries before completing high school in Dakar,
+            Senegal. There I earned my International Baccalaureate diploma, choosing Higher Level math, physics, and
+            chemistry, as well as a Delf B1 French Proficiency Diploma. I returned to Canada to study mechanical engineering
+            at the University of Toronto, specializing in Mechatronics, Manufacturing, and Robotics.
+        </p>
+
+        <p>
+            During my co-op year, I worked in industrial automation across the U.S. and Canada, an experience that let me
+            explore new environments while developing my engineering skills. I was given leadership opportunities, supervisory positions over tradework,
+            and established high-professional standards with my employers. These roles taught me accountability, adaptability,
+            and strengthened my ability to communicate complex problems to people with different engineering backgrounds.
+        </p>
+
+        <p class="float-img right">
+            <img src="/static/images/about4.jpg">
+        </p>
+
+        <p>
+            Outside of work, I have designed a wide range of robots, analyzed mechanical and structural
+            systems, and built tools that span from websites to simulations. One project that stands out is CakeBot,
+            a fully autonomous robot I designed to navigate a maze, localize, and detect and relocate blocks. 
+            The project taught me critical mechatronics fundamentals and pushed me to develop robust
+            solutions under tight deadlines. It solidified my interest in automation and robotics and represents the
+            kinds of technical challenges I thrive in.
+        </p>
+
+        <p>
+            My professional strengths include SolidWorks for CAD, Python for programming, and Studio5000 for PLC development,
+            along with a range of tools for design, analysis, and automation. I’m particularly drawn to work in robotics,
+            automation, mechanical design, and software-adjacent engineering.
+        </p>
+
+        <p class="float-img left">
+            <img src="/static/images/about5.jpg">
+        </p>
+
+        <p>
+            In my free time, I enjoy basketball, piano, chess, travel, and spending time with friends and family.
+            One of the milestones I’m most proud of is getting married in August 2025, a moment that marked a new chapter in my life.
+            I’ve also challenged myself physically by completing a Tough Mudder, pushing my limits and testing my perseverance.
+        </p>
+
+        <p>
+            I’m excited dive deeper into real-world engineering challenges. I’m open to both remote and in-person opportunities and 
+            am very willing to relocate for the right role. I want to develop new
+            skills and solve meaningful problems, and I’m motivated to prove my value
+            through hard work, creativity, and a commitment to continuous improvement.
+        </p>
+
+    </div>
+</section>
+
+    </main>
+
+</body>
+</html>
