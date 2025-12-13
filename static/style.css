@@ -529,7 +529,7 @@ PROJECTS SECTION
 **************************************/
 #project-full {
     padding: 80px 12vw;
-    background: #eeeeee00;
+    background: #eee;
 }
 
 .project-article {
@@ -670,15 +670,28 @@ EXPERIENCE SECTION
 
 /* RIGHT POPUP */
 .popup {
-    width: 25%;
+    width: 25vw;
     background: white;
     padding: 24px;
     border-radius: 12px;
     border: 1px solid #ddd;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     opacity: 0;
-    transform: translateY(10px);
-    transition: 0.25s ease;
+}
+
+/* ------------------- SMALL SCREEN ------------------- */
+.popup.small-screen {
+    max-height: calc(100vh - 40vh); /* viewport minus margin */
+    overflow-y: auto;
+}
+
+/* Fixed mode */
+.popup.small-screen.fixed-mode {
+    position: fixed !important;
+    top: 15vh;
+    left: var(--popup-left); /* container-aligned left */
+    width: 25%;              /* keep relative to container */
+    height: calc(100vh - 40vh);
 }
 
 .popup.visible {

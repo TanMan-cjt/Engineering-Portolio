@@ -155,54 +155,125 @@ const experienceData = {
 // ---------- ALWAYS-VISIBLE TIMELINE POPUP WITH ACTIVE HIGHLIGHTING ----------
 document.addEventListener("DOMContentLoaded", () => {
 
-  const items = document.querySelectorAll(".timeline-item");
-  const popup = document.getElementById("experience-popup");
+    const items = document.querySelectorAll(".timeline-item");
+    const popup = document.getElementById("experience-popup");
+    const timeline = document.querySelector(".timeline-left");
+    const timelineHeight = timeline.offsetHeight;
+    const viewportHeight = window.innerHeight;
 
-  let activeId = "1"; // default active item
+    if (timelineHeight > viewportHeight) {
+        popup.classList.add("small-screen");
+    } else {
+        popup.classList.remove("small-screen");
+    }
 
-  // Fill popup with experience data
-  function populatePopup(id) {
-    const data = experienceData[id];
-    if (!data) return;
+    let activeId = "1"; // default active item
 
-    popup.innerHTML = `
-      <h2>${data.title}</h2>
-      <p><strong>Location:</strong> ${data.location}</p>
-      <p><strong>Dates:</strong> ${data.dates}</p>
-      <p><strong>Type:</strong> ${data.type}</p>
-      <ul>${data.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
-    `;
-  }
+    // Fill popup with experience data
+    function populatePopup(id) {
+        const data = experienceData[id];
+        if (!data) return;
 
-  // Update timeline highlighting + popup content
-  function setActiveItem(id) {
-    activeId = id;
+        popup.innerHTML = `
+        <h2>${data.title}</h2>
+        <p><strong>Location:</strong> ${data.location}</p>
+        <p><strong>Dates:</strong> ${data.dates}</p>
+        <p><strong>Type:</strong> ${data.type}</p>
+        <ul>${data.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+        `;
+    }
 
+    // Update timeline highlighting + popup content
+    function setActiveItem(id) {
+        activeId = id;
+
+        items.forEach(item => {
+        if (item.dataset.id === id) {
+            item.classList.add("active");
+            item.classList.remove("inactive");
+        } else {
+            item.classList.remove("active");
+            item.classList.add("inactive");
+        }
+        });
+
+        populatePopup(id);
+    }
+
+    // INITIAL LOAD (popup always visible)
+    popup.classList.add("visible");
+    setActiveItem(activeId);
+
+    // HOVER BEHAVIOR (switch active item)
     items.forEach(item => {
-      if (item.dataset.id === id) {
-        item.classList.add("active");
-        item.classList.remove("inactive");
-      } else {
-        item.classList.remove("active");
-        item.classList.add("inactive");
-      }
+        item.addEventListener("mouseenter", () => {
+        const id = item.dataset.id;
+        if (id !== activeId) {
+            setActiveItem(id);
+        }
+        });
     });
-
-    populatePopup(id);
-  }
-
-  // INITIAL LOAD (popup always visible)
-  popup.classList.add("visible");
-  setActiveItem(activeId);
-
-  // HOVER BEHAVIOR (switch active item)
-  items.forEach(item => {
-    item.addEventListener("mouseenter", () => {
-      const id = item.dataset.id;
-      if (id !== activeId) {
-        setActiveItem(id);
-      }
-    });
-  });
 
 });
+
+function handleSmallScreenPopup() {
+    const popup = document.getElementById("experience-popup");
+    const timeline = document.querySelector(".timeline-left");
+    const MARGIN = window.innerHeight * 0.15;
+
+    // 1️⃣ Determine if small screen mode is active
+    const timelineHeight = timeline.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    let isSmallScreen = false;
+
+    if (timelineHeight > viewportHeight) {
+        isSmallScreen = true;
+    } else {
+        isSmallScreen = false;
+    }
+
+    // 2️⃣ Only run small screen logic if true
+    if (!isSmallScreen) {
+        popup.classList.remove("fixed-mode", "sticky-bottom");
+        popup.style.removeProperty("--popup-left");
+        popup.style.removeProperty("--popup-width");
+        return;
+    }
+
+    if (popup.classList.contains("sticky-bottom")){
+        popup.style.setProperty("--popup-position", "sticky");
+    } else {
+        popup.classList.remove("position");
+    }
+
+    // 3️⃣ Freeze width and left position for fixed mode
+    if (!popup.style.getPropertyValue("--popup-width")) {
+        const rect = popup.getBoundingClientRect();
+        popup.style.setProperty("--popup-width", `${rect.width}px`);
+        popup.style.setProperty("--popup-left", `${rect.left + window.scrollX}px`);
+    }
+
+    // 4️⃣ Determine scroll behavior
+    const timelineRect = timeline.getBoundingClientRect();
+    const popupRect = popup.getBoundingClientRect();
+
+    // FIXED while timeline is scrolling
+    if (timelineRect.top <= MARGIN && timelineRect.bottom > popupRect.height + MARGIN) {
+        popup.classList.add("fixed-mode");
+        popup.classList.remove("sticky-bottom");
+    }
+    // STICKY at bottom when timeline ends
+    else if (timelineRect.bottom <= popupRect.height + MARGIN) {
+        popup.classList.remove("fixed-mode");
+        popup.classList.add("sticky-bottom");
+    }
+    // NORMAL sticky top
+    else {
+        popup.classList.remove("fixed-mode", "sticky-bottom");
+    }
+}
+
+// Run on scroll and resize
+window.addEventListener("scroll", handleSmallScreenPopup);
+window.addEventListener("resize", handleSmallScreenPopup);
+window.addEventListener("load", handleSmallScreenPopup);
