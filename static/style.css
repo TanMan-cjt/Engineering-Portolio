@@ -529,7 +529,7 @@ PROJECTS SECTION
 **************************************/
 #project-full {
     padding: 80px 12vw;
-    background: #eee;
+    background: #eeeeee00;
 }
 
 .project-article {
@@ -556,6 +556,7 @@ EXPERIENCE SECTION
 **************************************/
 
 .experience-wrapper {
+    position: relative;
     display: flex;
     width: 100%;
     max-width: 90vw;
@@ -677,21 +678,39 @@ EXPERIENCE SECTION
     border: 1px solid #ddd;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     opacity: 0;
+    align-self: flex-start;
 }
 
 /* ------------------- SMALL SCREEN ------------------- */
 .popup.small-screen {
-    max-height: calc(100vh - 40vh); /* viewport minus margin */
+    position: sticky;
+    top: 15vh;
+    height: calc(100vh - 40vh);
     overflow-y: auto;
 }
 
-/* Fixed mode */
+/* FIXED MODE (viewport pinned) */
 .popup.small-screen.fixed-mode {
     position: fixed !important;
     top: 15vh;
-    left: var(--popup-left); /* container-aligned left */
-    width: 25%;              /* keep relative to container */
-    height: calc(100vh - 40vh);
+    left: var(--popup-left);
+}
+
+/* BOTTOM-ANCHORED MODE (scrolls with timeline again) */
+.popup.small-screen.sticky-bottom {
+    position: absolute;
+    bottom: 0;
+
+    /* CRITICAL: lock size */
+    width: var(--popup-width);
+    max-width: var(--popup-width);
+    left: calc(var(--popup-left) - 10vw);
+
+    /* CRITICAL: neutralize fixed/sticky leftovers */
+    top: auto;
+
+    /* Ensure same sizing model */
+    box-sizing: border-box;
 }
 
 .popup.visible {

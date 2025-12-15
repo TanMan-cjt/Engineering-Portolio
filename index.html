@@ -16,6 +16,15 @@
 
     <main>
         
+<script>
+(function () {
+    const isMobileViewport = window.innerHeight > window.innerWidth;
+
+    if (isMobileViewport) {
+        window.location.replace("/mobile");
+    }
+})();
+</script>
 
 <!-- HERO SECTION WITH BACKGROUND VIDEO -->
 <section id="hero">

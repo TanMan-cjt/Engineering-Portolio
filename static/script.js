@@ -240,17 +240,11 @@ function handleSmallScreenPopup() {
         return;
     }
 
-    if (popup.classList.contains("sticky-bottom")){
-        popup.style.setProperty("--popup-position", "sticky");
-    } else {
-        popup.classList.remove("position");
-    }
-
     // 3️⃣ Freeze width and left position for fixed mode
     if (!popup.style.getPropertyValue("--popup-width")) {
         const rect = popup.getBoundingClientRect();
         popup.style.setProperty("--popup-width", `${rect.width}px`);
-        popup.style.setProperty("--popup-left", `${rect.left + window.scrollX}px`);
+        popup.style.setProperty("--popup-height", `${rect.height}px`);
     }
 
     // 4️⃣ Determine scroll behavior
@@ -258,18 +252,27 @@ function handleSmallScreenPopup() {
     const popupRect = popup.getBoundingClientRect();
 
     // FIXED while timeline is scrolling
-    if (timelineRect.top <= MARGIN && timelineRect.bottom > popupRect.height + MARGIN) {
-        popup.classList.add("fixed-mode");
+    if (
+        timelineRect.top <= MARGIN &&
+        timelineRect.bottom > popupRect.height + MARGIN
+    ) {
+        if (!popup.classList.contains("fixed-mode")) {
+            enterFixedMode(popup);
+        }
         popup.classList.remove("sticky-bottom");
     }
     // STICKY at bottom when timeline ends
-    else if (timelineRect.bottom <= popupRect.height + MARGIN) {
+    else if (timelineRect.bottom - 5 <= popupRect.height + MARGIN) {
+
         popup.classList.remove("fixed-mode");
         popup.classList.add("sticky-bottom");
+
+        popup.style.removeProperty("top");
     }
     // NORMAL sticky top
     else {
         popup.classList.remove("fixed-mode", "sticky-bottom");
+        popup.style.removeProperty("top");
     }
 }
 
@@ -277,3 +280,12 @@ function handleSmallScreenPopup() {
 window.addEventListener("scroll", handleSmallScreenPopup);
 window.addEventListener("resize", handleSmallScreenPopup);
 window.addEventListener("load", handleSmallScreenPopup);
+
+function enterFixedMode(popup) {
+    const rect = popup.getBoundingClientRect();
+
+    popup.style.setProperty("--popup-left", `${rect.left}px`);
+    popup.style.setProperty("--popup-width", `${rect.width}px`);
+
+    popup.classList.add("fixed-mode");
+}
