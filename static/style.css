@@ -672,6 +672,7 @@ EXPERIENCE SECTION
 /* RIGHT POPUP */
 .popup {
     width: 25vw;
+    height: 77vh;
     background: white;
     padding: 24px;
     border-radius: 12px;
